@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class QuestionApiClient {
-    public static final String BASE_URL = "https://cde6c1a8.ngrok.io";
+    public static final String BASE_URL = "https://sport-quiz.herokuapp.com";
     public static Retrofit retrofit = null;
 
     public static Retrofit getQuestionApiClient() {
