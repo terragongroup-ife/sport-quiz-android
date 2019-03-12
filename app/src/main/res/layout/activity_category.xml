@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".categoryPage.CategoryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="35dp"
+    android:id="@+id/category_linear_layout"
+    android:layout_marginRight="35dp"
+    android:orientation="vertical"
+    android:layout_marginTop="40dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginRight="3dp"
+        android:text="Select the sport category"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/football_button"
+        android:text="Football"
+        android:background="@color/white"
+        android:elevation="50dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"/>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/basketball_button"
+        android:text="Basketball"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:elevation="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/tennis_button"
+        android:text="Tennis"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:elevation="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:id="@+id/golf_button"
+        android:text="Golf"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:elevation="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/f_1_button"
+        android:background="@color/white"
+        android:elevation="50dp"
+        android:text="Formula 1"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"/>
+
+
+</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
