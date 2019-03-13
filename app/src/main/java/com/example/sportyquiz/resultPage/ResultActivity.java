@@ -19,7 +19,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        nextButton = findViewById(R.id.correct_text_button);
+
         scoreTextView = findViewById(R.id.score_textView);
 
         nextButton.setOnClickListener(new View.OnClickListener() {

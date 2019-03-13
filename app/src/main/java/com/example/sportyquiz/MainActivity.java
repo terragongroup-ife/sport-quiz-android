@@ -2,11 +2,14 @@ package com.example.sportyquiz;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,10 +17,12 @@ import android.widget.Toast;
 
 import com.example.sportyquiz.model.RandomQuestion;
 import com.example.sportyquiz.resultPage.ResultActivity;
+import com.example.sportyquiz.startPage.StartActivity;
 import com.example.sportyquiz.viewmodels.RandomQuestionApiViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
     private TextView questionTextView;
@@ -75,8 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     isCorrect(button);
                     setUI();
                 }else{
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
-                    startActivity(intent);
+                   displayResult();
                 }
 
 
@@ -94,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void setUI(){
 
-        questionTextView.setText( allQuestions.get(count).getAnswer());
+        questionTextView.setText( allQuestions.get(count).getQuestion());
         answer = allQuestions.get(count).getAnswer();
         score = 0;
 
@@ -113,6 +117,28 @@ public class MainActivity extends AppCompatActivity {
 
         optionD = options.get(3);
         optionDButton.setText(optionD);
+
+    }
+
+    public void displayResult() {
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+
+        final View customView = getLayoutInflater().inflate(R.layout.activity_result, null);
+        alertDialog.setView(customView);
+        alertDialog.setNegativeButton("END GAME", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                startActivity(intent);
+            }
+
+        });
+        AlertDialog alert = alertDialog.create();
+        TextView scoreTextView = customView.findViewById(R.id.score_textView);
+        String result = "                You scored " + score + "  over  " + count;
+        scoreTextView.setText(result);
+        alert.show();
 
     }
 
